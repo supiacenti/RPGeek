@@ -1,0 +1,266 @@
+body {
+  background-color: #14141c;
+}
+
+nav{
+    background-color: #1e1e26;
+    margin-top: -7px;
+    height: 120px;
+}
+
+.aba_de_navegacao{
+    color: #debf0d; 
+    font-family: Tahoma; 
+    font-size: 20pt; 
+    text-decoration: none;
+}
+
+footer{
+  background-color: #1e1e26;
+  display: inline-flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aba_de_roda-pe{
+  color: #ffffff; 
+  font-family: Tahoma; 
+  font-size: 12pt; 
+  text-decoration: none;
+}
+
+/*para carregar*/
+
+.loader {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.loader.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+.thumb {
+  height: 100px;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+/*para a animação da logo*/
+.Para_a_logo {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInDown {
+  0% {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  }
+  @keyframes slideInDown {
+  0% {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  } 
+
+
+
+
+  .Ani_cupon{
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    }
+    @-webkit-keyframes slideInRight {
+    0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+    }
+    @keyframes slideInRight {
+    0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    visibility: visible;
+    }
+    100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    }
+    } 
+
+    #aqui{
+      width: 234px;
+    }
+
+    #aqui:hover {
+      width: 230px;
+    }
+
+
+
+    .hvr-grow {
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: transform;
+      transition-property: transform;
+    }
+    .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+
+
+
+    /* GRID GERAL */
+
+.estrutura {
+  display: grid;
+  /* Minmax é para definir o mínimo que quero dela, a última eu quero 300px fixo sempre. */
+  grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+  grid-template-areas:
+    "header header header"
+    "sidenav content anuncios"
+    "footer footer footer"
+  ;
+}
+
+@media (max-width: 1200px) {
+  .estrutura {
+    grid-template-areas:
+      "header header header"
+      "sidenav content content"
+      "sidenav anuncios anuncios"
+      "footer footer footer"
+    ;
+  }
+}
+
+@media (max-width: 760px) {
+  .estrutura {
+    grid-template-columns: 100%; /* 1fr está bugando */
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "content"
+      "anuncios"
+      "footer"
+    ;
+  }
+}
+
+.col-wide {
+  /* A coluna vai do 1 até o último, por isso -1, assim pega todas as colunas */
+  grid-column: 1 / -1;
+}
+
+
+/* citacao */
+
+.citacao{
+  align-self: start;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+}
+
+.citacao p {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Animação */
+
+[data-anime] {
+  opacity: 0;
+  transition: .2s;
+}
+
+[data-anime="left"] {
+  transform: translate3d(-50px, 0, 0);
+}
+
+[data-anime="right"] {
+  transform: translate3d(50px, 0, 0);
+}
+
+[data-anime="top"] {
+  transform: translate3d(0, -50px, 0);
+}
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+/*Para o Idiomas*/
+
+.idiomas{
+  position: relative;
+  display: inline-block;
+}
+
+.idiomas-content {
+  display: none;
+  position: absolute;
+  background-color: #332c2d;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  width: 182px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: rgb(36, 36, 36);
+}
+
+.idiomas:hover .idiomas-content {
+  display: block;
+}
